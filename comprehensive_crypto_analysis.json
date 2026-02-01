@@ -1,0 +1,623 @@
+{
+  "cryptographic_analysis": {
+    "base_sbox": {
+      "avalanche_percent": 16.666666666666664,
+      "avg_bits_changed": 0.6666666666666666,
+      "sac_compliance": 0.5,
+      "avg_sac_deviation": 0.5,
+      "sac_matrix": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bic_analysis": {
+        "bic_compliance": 1.0,
+        "avg_correlation": 0.0,
+        "max_correlation": 0,
+        "violation_count": 0,
+        "total_bit_pairs": 36,
+        "assessment": "EXCELLENT_BIC"
+      }
+    },
+    "best_candidate": {
+      "metadata": {
+        "attempt": 46,
+        "nonce": "8ab9ba7201744b466f43fb55",
+        "overall_score": 0.9413548407239706,
+        "assessment": "CRYPTOGRAPHICALLY_STRONG"
+      },
+      "analysis": {
+        "avalanche_percent": 50.78125,
+        "avg_bits_changed": 2.03125,
+        "sac_compliance": 0.9505208333333334,
+        "avg_sac_deviation": 0.049479166666666664,
+        "sac_matrix": [
+          [
+            0.5625,
+            0.5,
+            0.5625,
+            0.4375
+          ],
+          [
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.4375,
+            0.5,
+            0.625
+          ],
+          [
+            0.625,
+            0.4375,
+            0.5,
+            0.5625
+          ],
+          [
+            0.4375,
+            0.4375,
+            0.625,
+            0.5625
+          ],
+          [
+            0.4375,
+            0.5625,
+            0.5,
+            0.375
+          ]
+        ],
+        "bic_analysis": {
+          "bic_compliance": 0.8735436888385784,
+          "avg_correlation": 0.12645631116142164,
+          "max_correlation": 0.422890031611031,
+          "violation_count": 1,
+          "total_bit_pairs": 36,
+          "assessment": "WEAK_BIC"
+        }
+      }
+    },
+    "improvement": {
+      "avalanche": 34.114583333333336,
+      "sac": 0.45052083333333337,
+      "bic": -0.12645631116142164
+    }
+  },
+  "all_results": [
+    {
+      "attempt": 1,
+      "nonce": "26ebeb2a2584c6bd7c7fb249",
+      "avalanche": 50.0,
+      "sac": 0.9427083333333334,
+      "bic": 0.8294684206200134,
+      "overall_score": 0.924058917984449,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 6
+    },
+    {
+      "attempt": 2,
+      "nonce": "b824d8fcb3e59f714bc68892",
+      "avalanche": 50.78125,
+      "sac": 0.9088541666666666,
+      "bic": 0.8464426254635831,
+      "overall_score": 0.9184322640434166,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 3
+    },
+    {
+      "attempt": 3,
+      "nonce": "a3e12cb46c8414dbb2700342",
+      "avalanche": 50.260416666666664,
+      "sac": 0.9036458333333334,
+      "bic": 0.8637489927353885,
+      "overall_score": 0.9224649420229074,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 3
+    },
+    {
+      "attempt": 4,
+      "nonce": "0cf5bfd9f546a262d6328bfd",
+      "avalanche": 49.21875,
+      "sac": 0.9140625,
+      "bic": 0.8231775702337123,
+      "overall_score": 0.9072050234112373,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 3
+    },
+    {
+      "attempt": 5,
+      "nonce": "bfbb20d2fc67b8562fe6d51c",
+      "avalanche": 48.17708333333333,
+      "sac": 0.9401041666666666,
+      "bic": 0.8218074512046173,
+      "overall_score": 0.9084844281793168,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 5
+    },
+    {
+      "attempt": 6,
+      "nonce": "0655de9b774ab1faf4fb9298",
+      "avalanche": 49.21875,
+      "sac": 0.9140625,
+      "bic": 0.8362987571894845,
+      "overall_score": 0.9115787523964949,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 7
+    },
+    {
+      "attempt": 7,
+      "nonce": "9cc47852312c40307d76d609",
+      "avalanche": 53.90625,
+      "sac": 0.9192708333333334,
+      "bic": 0.8806837620921608,
+      "overall_score": 0.9333181984751647,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 1
+    },
+    {
+      "attempt": 8,
+      "nonce": "84bbb2c5344f1169515b6473",
+      "avalanche": 50.520833333333336,
+      "sac": 0.9166666666666666,
+      "bic": 0.8723221104481299,
+      "overall_score": 0.9296629257049321,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 4
+    },
+    {
+      "attempt": 9,
+      "nonce": "8ad6a3f78c21592d6cfb6492",
+      "avalanche": 50.260416666666664,
+      "sac": 0.9401041666666666,
+      "bic": 0.8763717348575435,
+      "overall_score": 0.93882530050807,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 2
+    },
+    {
+      "attempt": 10,
+      "nonce": "b468c79383758bcda70633af",
+      "avalanche": 50.260416666666664,
+      "sac": 0.9192708333333334,
+      "bic": 0.8391617449559283,
+      "overall_score": 0.9194775260964206,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 3
+    },
+    {
+      "attempt": 11,
+      "nonce": "961ecc620a4e659ed1da43fd",
+      "avalanche": 53.125,
+      "sac": 0.9427083333333334,
+      "bic": 0.8393493229896429,
+      "overall_score": 0.9273525521076588,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 4
+    },
+    {
+      "attempt": 12,
+      "nonce": "603a54b2c75041f79fb9db8d",
+      "avalanche": 51.5625,
+      "sac": 0.9427083333333334,
+      "bic": 0.8718505654481804,
+      "overall_score": 0.938186299593838,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 4
+    },
+    {
+      "attempt": 13,
+      "nonce": "417dea9de61ebd64c222a5a4",
+      "avalanche": 50.78125,
+      "sac": 0.9453125,
+      "bic": 0.858577901884504,
+      "overall_score": 0.9346301339615013,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 5
+    },
+    {
+      "attempt": 14,
+      "nonce": "74fb00f69010c1ba1b329d9d",
+      "avalanche": 50.0,
+      "sac": 0.9114583333333334,
+      "bic": 0.8359419504701252,
+      "overall_score": 0.915800094601153,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 5
+    },
+    {
+      "attempt": 15,
+      "nonce": "8d03eef96aa91771c3a99631",
+      "avalanche": 52.604166666666664,
+      "sac": 0.921875,
+      "bic": 0.8710998129136347,
+      "overall_score": 0.9309916043045449,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 1
+    },
+    {
+      "attempt": 16,
+      "nonce": "2cad51ddea6f2eca4489b6f5",
+      "avalanche": 49.73958333333333,
+      "sac": 0.9557291666666666,
+      "bic": 0.8731011118143492,
+      "overall_score": 0.9412073150492274,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 2
+    },
+    {
+      "attempt": 17,
+      "nonce": "eef801fa548ae3c6cf9ebec9",
+      "avalanche": 49.21875,
+      "sac": 0.9244791666666666,
+      "bic": 0.8392375768615923,
+      "overall_score": 0.9160305811760864,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 4
+    },
+    {
+      "attempt": 18,
+      "nonce": "954580fc69b87423fb08f74b",
+      "avalanche": 48.69791666666667,
+      "sac": 0.9348958333333334,
+      "bic": 0.8485197999870362,
+      "overall_score": 0.9191246555512343,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 4
+    },
+    {
+      "attempt": 19,
+      "nonce": "37484fd3f58016b8cc32d19d",
+      "avalanche": 52.083333333333336,
+      "sac": 0.9166666666666666,
+      "bic": 0.8696901122759235,
+      "overall_score": 0.9287855929808634,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 1
+    },
+    {
+      "attempt": 20,
+      "nonce": "920841637dcd48cbbdebbf9f",
+      "avalanche": 49.73958333333333,
+      "sac": 0.9348958333333334,
+      "bic": 0.8453899977068017,
+      "overall_score": 0.9250258325689339,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 3
+    },
+    {
+      "attempt": 21,
+      "nonce": "43bc4a1f26ff571c47ee1201",
+      "avalanche": 46.875,
+      "sac": 0.921875,
+      "bic": 0.8558467395947336,
+      "overall_score": 0.9050739131982445,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 6
+    },
+    {
+      "attempt": 22,
+      "nonce": "c3cc096e9e12ea076ef8682b",
+      "avalanche": 48.17708333333333,
+      "sac": 0.9296875,
+      "bic": 0.8783634379049288,
+      "overall_score": 0.9238642015238652,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 0
+    },
+    {
+      "attempt": 23,
+      "nonce": "06b796a2029893e959048876",
+      "avalanche": 47.91666666666667,
+      "sac": 0.9010416666666666,
+      "bic": 0.8460110199709148,
+      "overall_score": 0.9017953399903048,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 2
+    },
+    {
+      "attempt": 24,
+      "nonce": "dd800629c7a7d242f9d76974",
+      "avalanche": 50.0,
+      "sac": 0.953125,
+      "bic": 0.8461709676744531,
+      "overall_score": 0.9330986558914844,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 4
+    },
+    {
+      "attempt": 25,
+      "nonce": "47afaec07a100ac838be68c1",
+      "avalanche": 49.73958333333333,
+      "sac": 0.9401041666666666,
+      "bic": 0.8266492184638384,
+      "overall_score": 0.9205150172657238,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 5
+    },
+    {
+      "attempt": 26,
+      "nonce": "644d9440f9c80cd038c25ce5",
+      "avalanche": 49.73958333333333,
+      "sac": 0.9401041666666666,
+      "bic": 0.8649296898582136,
+      "overall_score": 0.9332751743971822,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 1
+    },
+    {
+      "attempt": 27,
+      "nonce": "71caafb1d978746fc00aa149",
+      "avalanche": 50.0,
+      "sac": 0.8854166666666666,
+      "bic": 0.8441142301102933,
+      "overall_score": 0.9098436322589866,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 6
+    },
+    {
+      "attempt": 28,
+      "nonce": "4dcbfd3a541483e4de516a58",
+      "avalanche": 48.69791666666667,
+      "sac": 0.9348958333333334,
+      "bic": 0.8321852621708878,
+      "overall_score": 0.9136798096125182,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 3
+    },
+    {
+      "attempt": 29,
+      "nonce": "65865490e533a94d6a261e84",
+      "avalanche": 50.260416666666664,
+      "sac": 0.9244791666666666,
+      "bic": 0.8744735084560059,
+      "overall_score": 0.9329842250408907,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 4
+    },
+    {
+      "attempt": 30,
+      "nonce": "7e6ef74d430559b20de057e4",
+      "avalanche": 46.61458333333333,
+      "sac": 0.9192708333333334,
+      "bic": 0.8866927835219044,
+      "overall_score": 0.9127517611739681,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 2
+    },
+    {
+      "attempt": 31,
+      "nonce": "1cd3454b4706ed5de8da2c8c",
+      "avalanche": 50.520833333333336,
+      "sac": 0.9427083333333334,
+      "bic": 0.8545403586973406,
+      "overall_score": 0.9324162306768914,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 2
+    },
+    {
+      "attempt": 32,
+      "nonce": "f991618888cc82d8ec682fbd",
+      "avalanche": 50.260416666666664,
+      "sac": 0.9244791666666666,
+      "bic": 0.8584504139527509,
+      "overall_score": 0.9276431935398058,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 6
+    },
+    {
+      "attempt": 33,
+      "nonce": "dd5166aadf736812e922554f",
+      "avalanche": 48.95833333333333,
+      "sac": 0.9322916666666666,
+      "bic": 0.8356053144644878,
+      "overall_score": 0.9156878825992737,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 6
+    },
+    {
+      "attempt": 34,
+      "nonce": "757957719479e1c0ea9ee95f",
+      "avalanche": 51.302083333333336,
+      "sac": 0.9348958333333334,
+      "bic": 0.850380363181771,
+      "overall_score": 0.928425398838368,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 4
+    },
+    {
+      "attempt": 35,
+      "nonce": "e2e973ac3cdb709838969b9d",
+      "avalanche": 48.95833333333333,
+      "sac": 0.9114583333333334,
+      "bic": 0.8502366546425896,
+      "overall_score": 0.9136205515475299,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 4
+    },
+    {
+      "attempt": 36,
+      "nonce": "1661e05619e830cab5863372",
+      "avalanche": 50.520833333333336,
+      "sac": 0.9114583333333334,
+      "bic": 0.8303560182765669,
+      "overall_score": 0.9139381172033002,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 6
+    },
+    {
+      "attempt": 37,
+      "nonce": "f971f324a2bb257d1ec8fbdf",
+      "avalanche": 51.5625,
+      "sac": 0.9427083333333334,
+      "bic": 0.8383820435926796,
+      "overall_score": 0.9270301256420043,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 7
+    },
+    {
+      "attempt": 38,
+      "nonce": "021ee04711b1c9e37f561232",
+      "avalanche": 53.125,
+      "sac": 0.9427083333333334,
+      "bic": 0.8385403080319161,
+      "overall_score": 0.9270828804550831,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 5
+    },
+    {
+      "attempt": 39,
+      "nonce": "ab3165eaf935769366fe8bc7",
+      "avalanche": 50.78125,
+      "sac": 0.9244791666666666,
+      "bic": 0.8373432683447984,
+      "overall_score": 0.9206074783371551,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 5
+    },
+    {
+      "attempt": 40,
+      "nonce": "85951d66acccc15c4a715b8e",
+      "avalanche": 53.385416666666664,
+      "sac": 0.9296875,
+      "bic": 0.8454352858006782,
+      "overall_score": 0.9250409286002261,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 3
+    },
+    {
+      "attempt": 41,
+      "nonce": "daac67fdd080d5fadc3de675",
+      "avalanche": 51.822916666666664,
+      "sac": 0.9296875,
+      "bic": 0.8287190866530172,
+      "overall_score": 0.9194688622176724,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 3
+    },
+    {
+      "attempt": 42,
+      "nonce": "6eae93a449a8336346cc6324",
+      "avalanche": 52.34375,
+      "sac": 0.9296875,
+      "bic": 0.8566897657700843,
+      "overall_score": 0.9287924219233613,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 2
+    },
+    {
+      "attempt": 43,
+      "nonce": "73a399612956b51e3937796d",
+      "avalanche": 52.083333333333336,
+      "sac": 0.9427083333333334,
+      "bic": 0.8362742378815119,
+      "overall_score": 0.9263275237382818,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 3
+    },
+    {
+      "attempt": 44,
+      "nonce": "6e688cf1dd3b09448bb9e09c",
+      "avalanche": 51.5625,
+      "sac": 0.9479166666666666,
+      "bic": 0.8585847039350872,
+      "overall_score": 0.9355004568672513,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 2
+    },
+    {
+      "attempt": 45,
+      "nonce": "ab18d07166d7f58882835ea8",
+      "avalanche": 46.875,
+      "sac": 0.9166666666666666,
+      "bic": 0.8275765237137939,
+      "overall_score": 0.8939143967934867,
+      "assessment": "GOOD",
+      "bic_violations": 5
+    },
+    {
+      "attempt": 46,
+      "nonce": "8ab9ba7201744b466f43fb55",
+      "avalanche": 50.78125,
+      "sac": 0.9505208333333334,
+      "bic": 0.8735436888385784,
+      "overall_score": 0.9413548407239706,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 1
+    },
+    {
+      "attempt": 47,
+      "nonce": "8dcd559e6ef3cea5f45633f4",
+      "avalanche": 48.69791666666667,
+      "sac": 0.9244791666666666,
+      "bic": 0.8477086614169764,
+      "overall_score": 0.9153820538056587,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 3
+    },
+    {
+      "attempt": 48,
+      "nonce": "0ae164c98737656fa66c0c24",
+      "avalanche": 49.73958333333333,
+      "sac": 0.9401041666666666,
+      "bic": 0.8592562006840893,
+      "overall_score": 0.9313840113391407,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 3
+    },
+    {
+      "attempt": 49,
+      "nonce": "706bf470a20386c1405c3f27",
+      "avalanche": 49.47916666666667,
+      "sac": 0.9322916666666666,
+      "bic": 0.868475438662112,
+      "overall_score": 0.9301168128873707,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 1
+    },
+    {
+      "attempt": 50,
+      "nonce": "0872bff52562a1f5664aded2",
+      "avalanche": 50.78125,
+      "sac": 0.9296875,
+      "bic": 0.8643750116665274,
+      "overall_score": 0.9313541705555091,
+      "assessment": "CRYPTOGRAPHICALLY_STRONG",
+      "bic_violations": 2
+    }
+  ]
+}
