@@ -1,0 +1,52 @@
+import numpy as np
+
+# --- Your SBOX definition (grouped by rules) ---
+SBOX = {
+    "00": [0,3,5,6,24,27,29,30,40,43,45,46,48,51,53,54],  # Rule 1
+    "01": [9,10,12,15,17,18,20,23,33,34,36,39,57,58,60,63],  # Rule 2
+    "10": [1,2,4,7,25,26,28,31,41,42,44,47,49,50,52,55],  # Rule 3
+    "11": [8,11,13,14,16,19,21,22,32,35,37,38,56,59,61,62],  # Rule 4
+}
+
+# --- Step 1: Flatten into 6-bit → 4-bit mapping table ---
+sbox_map = {}
+
+# Assign each 6-bit input to a 4-bit output index (0-15)
+for rule_idx, (rule, inputs) in enumerate(SBOX.items()):
+    for i, inp in enumerate(inputs):
+        sbox_map[inp] = i  # Map input to position within rule (0–15)
+
+# Build list (64 entries)
+sbox = [sbox_map[x] for x in range(64)]
+
+print("--- Flattened SBOX (6-bit → 4-bit) ---")
+for i, val in enumerate(sbox):
+    print(f"Input {i:02d} (bin {i:06b}) -> Output {val:04b}")
+
+# --- Step 2: Define Boolean functions for each output bit ---
+def output_bit(j, x):
+    return (sbox[x] >> j) & 1
+
+# --- Step 3: Walsh Spectrum & Nonlinearity ---
+def walsh_spectrum(f):
+    N = 64  # 6-bit input space
+    spectrum = []
+    for a in range(N):
+        total = 0
+        for x in range(N):
+            fx = f(x)
+            dot = bin(a & x).count("1") % 2
+            total += (-1)**(fx ^ dot)
+        spectrum.append(total)
+    return spectrum
+
+print("\n--- Nonlinearity Calculation ---")
+for j in range(4):
+    print(f"\nOutput bit {j}:")
+    spectrum = walsh_spectrum(lambda x: output_bit(j, x))
+    max_coeff = max(abs(v) for v in spectrum)
+    nl = (64 - max_coeff) // 2
+
+    print("Walsh spectrum:", spectrum)
+    print("Max coefficient:", max_coeff)
+    print("Nonlinearity:", nl)

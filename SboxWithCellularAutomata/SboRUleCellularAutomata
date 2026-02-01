@@ -1,0 +1,115 @@
+import os
+import hashlib
+import numpy as np
+import json
+
+# ----------------------------
+# Step 0: Generate Nonce
+# ----------------------------
+def generate_nonce(length=16):
+    """Generate a cryptographically secure random nonce."""
+    return os.urandom(length)
+
+# ----------------------------
+# Step 1: SHA-256 Seed from Data + Nonce
+# ----------------------------
+def generate_ca_seed(data_bits, nonce):
+    """
+    Generate a 256-bit seed for CA from flattened binary share and nonce.
+    data_bits: string of '0'/'1'
+    nonce: bytes
+    """
+    data_bytes = int(data_bits, 2).to_bytes((len(data_bits)+7)//8, byteorder='big')
+    combined = data_bytes + nonce
+    sha256_hash = hashlib.sha256(combined).digest()
+    # Convert hash to binary string
+    seed_bits = "".join(f"{byte:08b}" for byte in sha256_hash)
+    return seed_bits  # 256 bits
+
+# ----------------------------
+# Step 2: Initialize CA (Rule 30)
+# ----------------------------
+def run_ca(seed_bits, steps=10):
+    """
+    Run 1D cellular automaton (Rule 30) for multiple steps to generate randomness.
+    seed_bits: string of '0'/'1' (initial state)
+    steps: number of iterations
+    Returns: concatenated bitstream of all steps
+    """
+    ca = [int(b) for b in seed_bits]
+    width = len(ca)
+    result_bits = []
+
+    for _ in range(steps):
+        new_ca = []
+        for i in range(width):
+            left = ca[i-1] if i > 0 else 0
+            center = ca[i]
+            right = ca[i+1] if i < width-1 else 0
+            # Rule 30: new = left XOR (center OR right)
+            new_bit = left ^ (center | right)
+            new_ca.append(new_bit)
+        ca = new_ca
+        result_bits.extend(ca)
+    return result_bits  # list of 0/1
+
+# ----------------------------
+# Step 3: Shuffle SBOX using CA bits
+# ----------------------------
+def shuffle_sbox(SBOX, ca_bits):
+    """
+    Shuffle each rule of SBOX using random numbers from CA bits.
+    SBOX: original dictionary of rules
+    ca_bits: list of 0/1 bits from CA
+    """
+    shuffled_sbox = {}
+    bit_idx = 0
+    for rule, values in SBOX.items():
+        n_values = len(values)
+        # Take enough bits to get n_values random numbers
+        rand_numbers = []
+        while len(rand_numbers) < n_values:
+            chunk = ca_bits[bit_idx:bit_idx+4]  # 4 bits -> 0-15
+            if len(chunk) < 4:
+                chunk += [0]*(4-len(chunk))  # pad if needed
+            rand_num = int("".join(str(b) for b in chunk), 2)
+            rand_numbers.append(rand_num)
+            bit_idx += 4
+        # Pair values with random numbers
+        pairs = list(zip(values, rand_numbers))
+        # Sort by random numbers
+        pairs.sort(key=lambda x: x[1])
+        shuffled_values = [v for v, _ in pairs]
+        shuffled_sbox[rule] = shuffled_values
+    return shuffled_sbox
+
+# ----------------------------
+# Example Usage
+# ----------------------------
+SBOX = {
+    "00": [0,3,5,6,24,27,29,30,40,43,45,46,48,51,53,54],
+    "01": [9,10,12,15,17,18,20,23,33,34,36,39,57,58,60,63],
+    "10": [1,2,4,7,25,26,28,31,41,42,44,47,49,50,52,55],
+    "11": [8,11,13,14,16,19,21,22,32,35,37,38,56,59,61,62],
+}
+
+# Suppose this is your flattened share
+flat_share1 = "1010101100110010101010110011"  # example
+
+# Step 0: generate nonce
+nonce = generate_nonce()
+with open("nonce.bin", "wb") as f:
+    f.write(nonce)  # save to reuse for decompression
+
+# Step 1: generate CA seed
+seed_bits = generate_ca_seed(flat_share1, nonce)
+
+# Step 2: run CA
+ca_bits = run_ca(seed_bits, steps=10)
+
+# Step 3: shuffle SBOX
+shuffled_sbox = shuffle_sbox(SBOX, ca_bits)
+
+# Now you can use shuffled_sbox in your compress/decompress functions
+print("Original SBox", SBOX)
+print("Shuffled Sbox", shuffled_sbox)

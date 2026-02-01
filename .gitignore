@@ -1,0 +1,13 @@
+node_modules/
+.venv/
+.vscode/
+__pycache__/
+
+*.csv
+*.bin
+*.png
+*.jpg
+*.jpeg
+
+SboxScriptForTestingOnDataset/
+QR-images-Augmented/
